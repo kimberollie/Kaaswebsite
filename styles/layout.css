@@ -1,0 +1,142 @@
+
+body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-areas: 
+        "title title"
+        "menu  menu"
+        "main  main"
+        "main  main"
+        "main2  main2"
+        "ad1   ad1"
+        "ad2   ad2"
+        "foot  foot "; 
+}
+
+.header{
+  grid-area: title;
+} 
+
+.main{
+  grid-area: main;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+.ad1 {
+  grid-area: ad1;
+}
+.ad2 {
+  grid-area: ad2;
+}
+
+.foot {
+  grid-area: foot;
+}
+
+
+/*
+  Nav styles
+*/
+
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  flex-flow: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  flex-grow: 1;
+  display: flex;
+  padding: 1em;
+  margin: 0.4em;
+  list-style: none;
+  justify-content: center;
+  border-radius: 0.4em;
+  border-bottom: 1px solid black;
+}
+
+nav ul li:hover {
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+nav > ul > li > a {
+  color: #black;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.menutoggle {
+  margin-left: auto;
+}
+
+.menutoggle a{
+  font-size: 2em;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.active {
+  max-height: 400px;
+  transition: max-height 2s;
+
+}
+
+.inactive {
+  max-height: 0px;
+  transition: max-height 2s;
+}
+
+@media only screen and (min-width: 601px){
+  body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 10px;
+    grid-template-areas: 
+          "title title title title"
+          "menu  menu  menu  menu"
+          "main  main  ad1  ad1"
+          "main2  main2  ad2  ad2"
+          "foot  foot  foot foot"; 
+  }
+  nav ul li {
+    padding: 0.5em;
+    border: none;
+  }
+
+  nav ul {
+    flex-flow: row;
+  }
+
+  .menutoggle {
+    display: none;
+  }
+
+  .acitve, .inactive {
+    max-height: unset;
+  }
+}
+
+
+
+
+
+
+
+
